@@ -1,0 +1,21 @@
+{
+  "name": "pandaya-sht31",
+  "version": "1.0.0",
+  "description": "Module to Read SHT31 Data for Pandaya+ Device",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pandaya+",
+    "sht31",
+    "i2c"
+  ],
+  "author": "prajadimas",
+  "license": "ISC",
+  "dependencies": {
+    "i2c-bus": "^5.2.0",
+    "raspi-node-sht31": "^1.0.0",
+    "socket.io-client": "^2.3.0"
+  }
+}
