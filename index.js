@@ -41,8 +41,9 @@ var config = {
 socket.on('connect', function () {
 	socket.emit('client', 'pandaya-sht31')
 	socket.on('config', (opts) => {
-		config.address = opts.address || config.address
-		config.bus = opts.bus || config.bus
+		console.log('Opts: ', opts)
+		config.address = parseInt(opts.address) || config.address
+		config.bus = Number(opts.bus) || config.bus
 		config.unit = opts.unit || config.unit
 		config.interval = opts.interval || config.interval
 	})
@@ -53,9 +54,9 @@ socket.on('connect', function () {
 			unit: config.unit
 		})
 		.then((data) => {
-			console.log('Timestamp: ' + new Date().getTime())
-			console.log('Temperature is: ' + data.temperature.toString())
-			console.log('Humidity is: ' + data.humidity.toString())
+			// console.log('Timestamp: ' + new Date().getTime())
+			// console.log('Temperature is: ' + data.temperature.toString())
+			// console.log('Humidity is: ' + data.humidity.toString())
 			socket.emit('data', {
 				timestamp: new Date().getTime(),
 				data: {
